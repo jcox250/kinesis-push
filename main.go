@@ -54,7 +54,7 @@ func main() {
 		if err := kc.Pub(scanner.Bytes()); err != nil {
 			logger.Error("msg", "failed to publish to kinesis", "err", err)
 		}
-		logger.Info("msg", "successfully wrote to kinesis", "data", scanner.Text())
+		logger.Debug("msg", "successfully wrote to kinesis", "data", scanner.Text())
 	}
 	if err := scanner.Err(); err != nil {
 		logger.Debug("msg", "failed to read from stdin", "err", err)
